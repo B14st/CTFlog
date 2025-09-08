@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
 # Simple CTF challenge journal.
 ## TODO: add total time used function for export. Improve formatting. Search function? Tagging inputs?
 # Remove s command and only use m?
 
-
+import re
 import os
 from datetime import datetime
 
@@ -75,7 +76,7 @@ print("  s  -> add a step")
 print("  m  -> add/paste multi-line block step (nmap, gobuster, etc.)")
 print("  f  -> add a flag")
 print("  p  -> print current summary")
-print("  x  -> export .md file and quit\n")
+print(f"  x  -> export to {filename} and quit\n")
 
 
 #          ---Main command loop---
@@ -154,4 +155,4 @@ while True:
         break
 
     else:
-        print("Commands: s (step), f (flag), p (print), x (export & quit)")
+        print("Commands: s (step), m (multiline step) f (flag), p (print), x (export & quit)")
