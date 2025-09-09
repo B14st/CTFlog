@@ -76,7 +76,8 @@ print("  s  -> add a step")
 print("  m  -> add/paste multi-line block step (nmap, gobuster, etc.)")
 print("  f  -> add a flag")
 print("  p  -> print current summary")
-print(f"  x  -> export to {filename} and quit\n")
+print(f"  x  -> export to {filename} and quit")
+print(" ^C  -> quit (without saving)\n")
 
 
 #          ---Main command loop---
@@ -84,7 +85,7 @@ while True:
     try:  #Accidental ctrl + c measure
         cmd = input("> ").strip().lower()
     except KeyboardInterrupt:
-        print("\nctrl + c detected. Exit? y/n")
+        print("\n^C detected. Exit? y/n")
         choice = input("> ").strip().lower()
         if choice == "y":
             break        # exit loop and close program
@@ -155,4 +156,4 @@ while True:
         break
 
     else:
-        print("Commands: s (step), m (multiline step) f (flag), p (print), x (export & quit)")
+        print("Commands: s (step), m (multiline step) f (flag), p (print), x (export & quit) , ^C (quit)")
